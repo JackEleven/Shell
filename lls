@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo "Hi $USER"
+
+echo "List and count in the following path"
+echo "Please type in below or press Enter key to skip:"
+read path
+
+if [ -z "$path" ]; then
+   path="."
+fi
+path+="/*"
+
+echo "Results:"
+
+i=0
+for file in $path; do
+    ((++i))
+    echo $i, $file
+done;
+
+
